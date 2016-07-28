@@ -43,7 +43,6 @@ if __name__ == '__main__':
         subprocess.call(['bash',
                         '{}/.proxyhelper/zetproxy'.format(home)
                         ,'Proxy',arg.customProxy[0]])
-         
     elif arg.getProxy:
         subprocess.call(['python3',
                         '{}/.proxyhelper/surely_parallel.py'.format(home)])

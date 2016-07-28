@@ -1,23 +1,13 @@
 # ProxyHelper
 
 [![Join the chat at https://gitter.im/Nithmr/ProxyHelper](https://badges.gitter.im/Nithmr/ProxyHelper.svg)](https://gitter.im/Nithmr/ProxyHelper?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-This repository will contain the code for a **cool** application that would remove the need to use FoxyProxy and likes.
 
-ProxyHelper is a set of utilities that you can **install and forget and it will just work!** It will automate all your proxy and tor configuration needs on linux. Meaning, you won't need to configure proxy for firefox, apt, git, etc manually, ever again.
-
-Whether you are in AGH or CC or KBH, or your proxy is ```172.16.12.2``` or ```172.16.20.2``` or ```anything else```, all of the work is done in background and proxy is set for you as soon as you connect to the network, magically (and automatically).
-Another cool thing about ProxyHelper is that it always sets the *Fastest* proxy for you. This is especially relevant if you use networks in CC or EED and you don't know which proxy will be faster -```172.16.24.2``` or ```172.16.24.3```; leave it to ProxyHelper to test both proxies and set the faster proxy automatically.
-  
-Also, ProxyHelper keeps your tor alive! No more **Tor has been disconnected!** messages. For details see *torpinger* file in the repository.
-   
-   
-**Currently in Alpha, feel free to test it and report issues and bugs here. However, it is not tested for various platforms (except Kubuntu), so if you don't know how to fix a broken linux, don't install, wait for it to become stable.**  
+A simple cli based system to automatically set fastest system-wide. 
   
 ===
 
-###More Features
+###
   
-This section is yet to be written. It will contain an in-depth description of the components of ProxyHelper  
 
 ===
 
@@ -26,9 +16,12 @@ This section is yet to be written. It will contain an in-depth description of th
 1. **Linux**  -  ProxyHelper doesn't support for windows unfortunately (Yet)  
 2. **Git**  -  You need to have git installed in your system   
 ```sudo apt-get install git```  
-3. **Python3**  -  In Ubuntu based distributions since 14.04 it is already installed, otherwise you need to install this by yourself.   
+3. **Python3**  -  In Ubuntu based distributions since 14.04 it is already installed, otherwise you need to install this by yourself.
 
-The below are required only if you want to use **tor** related utilities:-
+===
+
+###Optional arguments:-
+**The below are required only if you want to use **tor** related utilities:-**
   
 4. **pip-3**  -  Again, this should come already installed with your OS, otherwise follow the step below.  
 ```sudo apt-get install python3-pip```
