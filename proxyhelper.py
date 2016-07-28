@@ -20,6 +20,10 @@ if __name__ == '__main__':
                         '--customProxy',
                         nargs=1,
                         help='Set your own proxy') 
+    main_args.add_argument('-N',
+                        '--clearProxy',
+                        action='store_true',
+                        help='Reset the system proxy') 
     parser.add_argument('-U',
                         '--update',
                         action='store_true', 
@@ -43,6 +47,10 @@ if __name__ == '__main__':
         subprocess.call(['bash',
                         '{}/.proxyhelper/zetproxy'.format(home)
                         ,'Proxy',arg.customProxy[0]])
+    elif arg.clearProxy:
+        subprocess.call(['bash',
+                        '{}/.proxyhelper/zetproxy'.format(home),
+                        'None'])
     elif arg.getProxy:
         subprocess.call(['python3',
                         '{}/.proxyhelper/surely_parallel.py'.format(home)])

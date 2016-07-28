@@ -35,6 +35,7 @@ proxy_shell()
 	if [ ! $WIFI_PROXY = "None" ]
 	then 
 		hp_pr=http://$WIFI_PROXY:$PORT/
+        echo hp_pr:$hp_pr
 		hsp_pr=https://$WIFI_PROXY:$PORT/
 		fp_pr=ftp://$WIFI_PROXY:$PORT/
         np_pr="localhost,127.0.0.1"
@@ -51,7 +52,7 @@ proxy_apt()
 	echo '## Setting proxy for apt'
 	if [ $WIFI_PROXY = "None" ]
 	then 
-		echo '  -> Clearing apt proxy'
+		echo '  -> Clearing apt proxy everywhere ...'
         printf "Acquire::http::Proxy \"false\";" > ./.temp_file_apt;
     else 
 		printf "Acquire::http::Proxy \"$hp_pr\";\nAcquire::https::Proxy \"$hsp_pr\";\nAcquire::ftp::Proxy \"$fp_pr\";\n" > ./.temp_file_apt;
@@ -93,6 +94,21 @@ proxy_gnome()
     fi
     echo '  -> Setting proxy in gnome'
 }
+# proxy for git
+proxy_git()
+{ echo '## Setting git proxy'
+
+    if [[ $WIFI_PROXY = "None" ]]
+    then
+        git config --global http.proxy ''
+        git config --global https.proxy ''
+    else
+        git config --global http.proxy $WIFI_PROXY:$PORT
+        git config --global https.proxy $WIFI_PROXY:$PORT
+    fi
+    echo '  -> Proxy set in git'
+}
+
 # proxy for kde 5.5
 proxy_kde()
 {
@@ -133,8 +149,9 @@ then
     WIFI_PROXY='127.0.0.1'
 elif [[ $1 = "Proxy" ]]
 then 
-    WIFI_PROXY=$2
-    PORT=3128
+    TEMP=$2
+    WIFI_PROXY=$(echo $TEMP | sed 's/\(.*\):.*/\1/')
+    PORT=$(echo $TEMP | sed 's/.*:\(.*\)/\1/')
 else
     echo '----------------------------------'
     echo 'Setting proxy automatically ...'    
@@ -157,7 +174,16 @@ fi
 
 # Function call to set environment variables
 proxy_shell bash
-proxy_shell zsh
+#source ~/.bashrc
+if [ -x "$(command -v zsh)" ]
+then 
+    proxy_shell zsh
+    #zsh ~/.zshrc
+fi
+if [ -x "$(command -v git)" ]
+then 
+    proxy_git
+fi
 if [ -x "$(command -v apt)" ]
 then 
     proxy_apt
@@ -184,4 +210,5 @@ fi
 
 ## Better method would be to source the config script 
 ## But that doesn't work for unknown reason
+
 $SHELL
