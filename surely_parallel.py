@@ -4,7 +4,7 @@
 FAST_DOMAIN = 'bing.com'
 proxies = ['{}'.format(FAST_DOMAIN),'172.16.24.2',
            '172.16.24.3','172.16.24.4','172.16.12.2','172.16.12.3',
-           '172.16.20.2','172.16.28.11']
+           '172.16.20.2','172.16.28.11','172.16.32.2']
 
 print('-'*30)
 print('Searching for best proxy ...')
@@ -33,7 +33,7 @@ class Pinger(object):
     def ping(self,proxy):
         # logging.debug('Class name {}'.format(self.name))
         self.proxy = proxy
-        self.op = subprocess.check_output('ping -c4 -w6 {} 2>/dev/null | tail -1'.format(self.proxy),shell=True)
+        self.op = subprocess.check_output('ping -c4 -w4 {} 2>/dev/null | tail -1'.format(self.proxy),shell=True)
         self.op_clean()
         # print('Output is {}'.format(self.op))
         return self.op
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     # python 2 has no items() but iteriterms()
     best_p = min(pidi.items(),key=lambda x: x[1])
     if best_p[1] == INFI or best_p[0] == FAST_DOMAIN:
-        print('  -> Cannot identify proxy; resetting')
+        print('  -> Cannot identify proxy; Clearing proxy;')
         sys.exit()
     else:
         print('  -> Best proxy : {}'.format(best_p[0]))

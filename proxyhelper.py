@@ -19,7 +19,7 @@ if __name__ == '__main__':
     main_args.add_argument('-C',
                         '--customProxy',
                         nargs=1,
-                        help='Set your own proxy') 
+                        help='Set your own proxy. eg. -C 172.16.24.3:3128') 
     main_args.add_argument('-N',
                         '--clearProxy',
                         action='store_true',
