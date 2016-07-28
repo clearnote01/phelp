@@ -6,9 +6,13 @@ A simple cli based system to automatically set fastest system-wide.
   
 ===
 
-###
+###Supports:-
   
-
+1. **git**
+2. **web-browsers-firefox,chrome (Set option "Use System Proxy" in preference of browser**
+3. **gnome proxy module**
+4. **kde proxy module**
+5. **apt**
 ===
 
 ###Requirements:-
@@ -16,14 +20,14 @@ A simple cli based system to automatically set fastest system-wide.
 1. **Linux**  -  ProxyHelper doesn't support for windows unfortunately (Yet)  
 2. **Git**  -  You need to have git installed in your system   
 ```sudo apt-get install git```  
-3. **Python3**  -  In Ubuntu based distributions since 14.04 it is already installed, otherwise you need to install this by yourself.
+3. **Python3**  -  In most distros including Ubuntu based distributions since 14.04, it is already installed, otherwise you need to install this by yourself.
 
 ===
 
 ###Optional arguments:-
 **The below are required only if you want to use **tor** related utilities:-**
   
-4. **pip-3**  -  Again, this should come already installed with your OS, otherwise follow the step below.  
+4. **pip-3**  -    
 ```sudo apt-get install python3-pip```
 5. **socks python module**   
 ```sudo -H pip3 install pysocks```
