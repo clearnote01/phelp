@@ -8,11 +8,11 @@ A comprehensive command line utility to automate all your proxy settings.
 
 ###Supports:-
   
-1. **git**
-2. **web-browsers**-firefox,chrome (Set option "Use System Proxy" in preference of browser)
-3. **gnome proxy module**
-4. **kde proxy module**
-5. **apt**                                 
+1. git
+2. web-browsers-firefox,chrome (Set option "Use System Proxy" in preference of browser)
+3. gnome proxy module
+4. kde proxy module
+5. apt                                 
   
 
 ===
@@ -53,7 +53,7 @@ sudo chmod +x ./phelp-install.sh && ./phelp-install.sh
 3. Clear all proxy-  
 ```phelp -N```  
 4. Set custom proxy-  
-```phelp -C 172.16.24.2:3128```** *(Replace the proxy by what you require* 
+```phelp -C 172.16.24.2:3128``` *(Replace the proxy by what you require* 
 5. Show help-    
 `phelp -h`  
   
