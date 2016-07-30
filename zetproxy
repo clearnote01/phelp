@@ -173,7 +173,7 @@ fi
 
 # Function call to set environment variables
 proxy_shell bash
-#source ~/.bashrc
+source ~/.bashrc
 if [ -x "$(command -v zsh)" ]
 then 
     proxy_shell zsh
@@ -210,4 +210,4 @@ fi
 ## Better method would be to source the config script 
 ## But that doesn't work for unknown reason
 
-$SHELL
+#$SHELL

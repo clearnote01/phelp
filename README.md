@@ -11,11 +11,11 @@ A simple cli based system to automatically set fastest system-wide.
 
 ===
 
-###Requirements:-
+###Installation:-
   
 1. **Linux**  -  ProxyHelper doesn't support for windows unfortunately (Yet)  
 2. **Git**  -  You need to have git installed in your system   
-```sudo apt-get install git```  
+```sudo apt-get install git```   
 3. **Python3**  -  In Ubuntu based distributions since 14.04 it is already installed, otherwise you need to install this by yourself.
 
 ===
