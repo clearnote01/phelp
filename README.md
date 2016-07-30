@@ -46,24 +46,15 @@ sudo chmod +x ./phelp-install.sh && ./phelp-install.sh
   
 ###Usage:- 
   
-1. Set best proxy  
-  
-`phelp -S`  
-  
-2. Evaluate best proxy  
-  
-`phelp -G`  
-  
-3. Clear all proxy  
-  
-`phelp -N`  
-  
-4. Set custom proxy  
-  
-`phelp -C 172.16.24.2:3128`** *(Replace the proxy by what you require*    
-  
-5. Show help  
-  
+1. Set best proxy-  
+```phelp -S```  
+2. Evaluate best proxy-  
+```phelp -G```  
+3. Clear all proxy-  
+```phelp -N```  
+4. Set custom proxy-  
+```phelp -C 172.16.24.2:3128```** *(Replace the proxy by what you require* 
+5. Show help-    
 `phelp -h`  
   
 
