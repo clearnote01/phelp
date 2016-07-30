@@ -38,7 +38,7 @@ A comprehensive command line utility to automate all your proxy settings.
 
 ```
 git clone https://github.com/clearnote01/phelp.git ~/.proxyhelper && cd ~/.proxyhelper && 
-sudo chmod +x ./phelp-installer.sh && ./phelp-installer.sh
+sudo chmod +x ./phelp-install.sh && ./phelp-install.sh
 ```  
 
 ===  
